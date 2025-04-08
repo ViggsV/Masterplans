@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Plan A – Take over the world. One div at a time." />
   <title>Plan A - Take Over The World</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+  <link rel="stylesheet" href="styles.css" />  
   <script defer src="script.js"></script>
 </head>
 
@@ -13,13 +15,16 @@
     <div id="main-container">
   <header>
     <h1>Plan A: Take Over The World</h1>
-    <p>Your daily dose of global domination goals 💣🌍</p>
+    <p>Your daily dose of global domination goals</p>
   </header>
 
   <main>
     <section id="mission">
       <h2>Mission Objectives</h2>
-      <img id="earth-img" src="assets/earth.png" alt="Girl holding a globe close to her face" /> 
+      <div id="cesiumContainer" class="fullSize"></div>
+      <div id="toolbar"></div>
+
+
       <ul>
         <li>✅ Build an army of elite code ninjas</li>
         <li>✅ Hack the Matrix</li>
@@ -28,12 +33,6 @@
         <li>⬜ Find a cure for baldness</li>
         <li>⬜ Buy an extinguisher for Alfie (that dude is on fire!!!) </li>
       </ul>
-    </section>
-
-    <section id="daily-log">
-      <h2>Daily Log</h2>
-      <p>Log your steps to domination here...</p>
-      <!-- Add entries dynamically with JS -->
     </section>
   </main>
 

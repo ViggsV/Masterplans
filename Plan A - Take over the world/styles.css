@@ -25,7 +25,27 @@ ul {
     }
       
 footer {
-    margin-top: 30px;
-    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+   
+
 }
-      
+
+#globe-wrapper {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  #cesiumContainer canvas {
+    background: transparent !important;
+    display: block;
+  }
+
+  
+  
