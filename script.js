@@ -30,6 +30,9 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
     destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 17000000),
   });
 
+  //max zoom distance
+  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 90000000;
+
   // destroy background
   viewer.scene.skyBox.destroy();
   viewer.scene.skyBox = undefined;  
@@ -66,5 +69,97 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
   
     // Apply rotation
     viewer.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, rotationSpeed);
+  });
+  
+// Closer (zoom in) → height is smaller
+const ZOOM_CLOSE = -300000000;     // Cards disappear here
+const ZOOM_FAR = 90000000;       // Cards fully visible here
+
+  const camera = viewer.camera;
+
+  const cards = [
+    { el: document.querySelector('.left-card'), direction: 'left' },
+    { el: document.querySelector('.right-card'), direction: 'right' },
+    { el: document.querySelector('.bottom-card'), direction: 'bottom' },
+    { el: document.querySelector('.top-left-card'), direction: 'top-left' },
+    { el: document.querySelector('.top-right-card'), direction: 'top-right' },
+    { el: document.querySelector('.bottom-left-card'), direction: 'bottom-left' },
+    { el: document.querySelector('.bottom-right-card'), direction: 'bottom-right' },
+    { el: document.querySelector('.top-center-card'), direction: 'top' },
+    { el: document.querySelector('.mid-top-left'), direction: 'mid-top-left' },
+    { el: document.querySelector('.mid-top-right'), direction: 'mid-top-right' },
+    { el: document.querySelector('.mid-bottom-left'), direction: 'mid-bottom-left' },
+    { el: document.querySelector('.mid-bottom-right'), direction: 'mid-bottom-right' },
+  ];
+  
+  
+  // When height is ZOOM_CLOSE → progress is 0
+  // When height is ZOOM_FAR → progress is 1
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+  
+  function mapRange(value, inMin, inMax, outMin, outMax) {
+    return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+  }
+  
+  viewer.camera.changed.addEventListener(() => {
+    const height = camera.positionCartographic.height;
+  
+    const progress = clamp(
+      mapRange(height, ZOOM_CLOSE, ZOOM_FAR, 0, 1),
+      0,
+      1
+    );
+  
+    const offset = 100 * (1 - progress); // move offscreen when zoomed in
+    const scale = mapRange(progress, 0, 1, 0.5, 1); // smaller when zoomed in
+  
+    cards.forEach(({ el, direction }) => {
+      let transform = `scale(${scale})`;
+    
+      switch (direction) {
+        case 'left':
+          transform += ` translateX(-${offset}vw) translateY(-50%)`;
+          break;
+        case 'right':
+          transform += ` translateX(${offset}vw) translateY(-50%)`;
+          break;
+        case 'bottom':
+          transform += ` translateY(${offset}vh) translateX(-50%)`;
+          break;
+        case 'top':
+          transform += ` translateY(-${offset}vh) translateX(-50%)`;
+          break;
+        case 'top-left':
+          transform += ` translate(-${offset}vw, -${offset}vh)`;
+          break;
+        case 'top-right':
+          transform += ` translate(${offset}vw, -${offset}vh)`;
+          break;
+        case 'bottom-left':
+          transform += ` translate(-${offset}vw, ${offset}vh)`;
+          break;
+        case 'bottom-right':
+          transform += ` translate(${offset}vw, ${offset}vh)`;
+          break;
+        case 'mid-top-left':
+  transform += ` translate(-${offset * 1}vw, -${offset * 1}vh)`;
+  break;
+case 'mid-top-right':
+  transform += ` translate(${offset * 0.5}vw, -${offset * 0.5}vh)`;
+  break;
+case 'mid-bottom-left':
+  transform += ` translate(-${offset * 0.5}vw, ${offset * 0.5}vh)`;
+  break;
+case 'mid-bottom-right':
+  transform += ` translate(${offset * 0.5}vw, ${offset * 0.5}vh)`;
+  break;
+      }
+    
+      el.style.transform = transform;
+      el.style.opacity = progress;
+    });
+    
   });
   

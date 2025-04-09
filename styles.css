@@ -1,51 +1,5 @@
-body {
-    background-color: #1f1f1f;
-    color: #f5f5f5;
-}
-
-#main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;    
-}
 
 
-#earth-img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-}
-    
-ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    }
-      
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-   
-
-}
-
-#globe-wrapper {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  #cesiumContainer canvas {
-    background: transparent !important;
-    display: block;
-  }
 
   
   
