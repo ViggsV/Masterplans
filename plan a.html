@@ -14,7 +14,9 @@
 
 <body class="h-screen flex flex-col justify-between bg-gray-100 text-gray-800 overflow-hidden">
 
-    <div id="main-container">
+  <div id="background-text-wall" class="fixed z-0 overflow-hidden pointer-events-none inset-0"></div> 
+
+    <div id="main-container" class="relative z-10">
   <header>
     <a href="index.html" class="absolute top-4 left-4 z-1">
       <svg class="w-6 h-6 text-blue-500 hover:text-black transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -29,7 +31,7 @@
       <div id="cards" class="absolute inset-0 pointer-events-none z-20">
 
         <!-- Left Card -->
-        <div class="card left-card transform transition-transform duration-700 ease-out absolute left-10 top-1/2 -translate-y-1/2">
+        <div class="card left-card transform transition-transform duration-700 ease-out absolute left-10 top-1/2 -translate-y-1/2 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Learn Tailwind</h3>
             <p class="text-sm text-gray-600">Master utility-first CSS</p>
@@ -37,7 +39,7 @@
         </div>
       
         <!-- Right Card -->
-        <div class="card right-card transform transition-transform duration-700 ease-out absolute right-10 top-1/2 -translate-y-1/2">
+        <div class="card right-card transform transition-transform duration-700 ease-out absolute right-10 top-1/2 -translate-y-1/2 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Ninja Turtle Coders</h3>
             <p class="text-sm text-gray-600">Shell scripts & slice kicks</p>
@@ -45,7 +47,7 @@
         </div>
       
         <!-- Bottom Center Card -->
-        <div class="card bottom-card absolute bottom-10 left-1/2 -translate-x-1/2 transform transition-transform duration-700 ease-out">
+        <div class="card bottom-card absolute bottom-10 left-1/2 -translate-x-1/2 transform transition-transform duration-700 ease-out opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Learn GitHub</h3>
             <p class="text-sm text-gray-600">Push it real good</p>
@@ -53,7 +55,7 @@
         </div>
       
         <!-- Top-Left Card -->
-        <div class="card top-left-card transform transition-all duration-700 ease-out absolute top-10 left-10">
+        <div class="card top-left-card transform transition-all duration-700 ease-out absolute top-10 left-10 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">React Rituals</h3>
             <p class="text-sm text-gray-600">Build mighty components</p>
@@ -61,7 +63,7 @@
         </div>
       
         <!-- Top-Right Card -->
-        <div class="card top-right-card transform transition-all duration-700 ease-out absolute top-10 right-10">
+        <div class="card top-right-card transform transition-all duration-700 ease-out absolute top-10 right-10 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">JS Mind Control</h3>
             <p class="text-sm text-gray-600">Master the event loop</p>
@@ -69,7 +71,7 @@
         </div>
       
         <!-- Bottom-Left Card -->
-        <div class="card bottom-left-card transform transition-all duration-700 ease-out absolute bottom-10 left-10">
+        <div class="card bottom-left-card transform transition-all duration-700 ease-out absolute bottom-10 left-10 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Debug Dungeon</h3>
             <p class="text-sm text-gray-600">Escape the infinite loop</p>
@@ -77,7 +79,7 @@
         </div>
       
         <!-- Bottom-Right Card -->
-        <div class="card bottom-right-card transform transition-all duration-700 ease-out absolute bottom-10 right-10">
+        <div class="card bottom-right-card transform transition-all duration-700 ease-out absolute bottom-10 right-10 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Firebase Forge</h3>
             <p class="text-sm text-gray-600">Smelt your backend</p>
@@ -85,7 +87,7 @@
         </div>
       
         <!-- Top-Center Card -->
-        <div class="card top-center-card transform transition-all duration-700 ease-out absolute top-10 left-1/2 -translate-x-1/2">
+        <div class="card top-center-card transform transition-all duration-700 ease-out absolute top-10 left-1/2 -translate-x-1/2 opacity-0">
           <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
             <h3 class="font-bold text-lg">Async Alchemy</h3>
             <p class="text-sm text-gray-600">Turn promises to power</p>
@@ -93,7 +95,7 @@
         </div>
       
         <!-- Mid-Top-Left Card -->
-<div class="card mid-card mid-top-left transform transition-all duration-700 ease-out absolute top-1/4 left-1/4">
+<div class="card mid-card mid-top-left transform transition-all duration-700 ease-out absolute top-1/4 left-1/4 opacity-0">
   <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
     <h3 class="font-bold text-lg">Node Necromancer</h3>
     <p class="text-sm text-gray-600">Raise APIs from the dead</p>
@@ -101,7 +103,7 @@
 </div>
 
 <!-- Mid-Top-Right Card -->
-<div class="card mid-card mid-top-right transform transition-all duration-700 ease-out absolute top-1/4 right-1/4">
+<div class="card mid-card mid-top-right transform transition-all duration-700 ease-out absolute top-1/4 right-1/4 opacity-0">
   <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
     <h3 class="font-bold text-lg">TypeScript Trials</h3>
     <p class="text-sm text-gray-600">Strict typing sorcery</p>
@@ -109,7 +111,7 @@
 </div>
 
 <!-- Mid-Bottom-Left Card -->
-<div class="card mid-card mid-bottom-left transform transition-all duration-700 ease-out absolute bottom-1/4 left-1/4">
+<div class="card mid-card mid-bottom-left transform transition-all duration-700 ease-out absolute bottom-1/4 left-1/4 opacity-0">
   <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
     <h3 class="font-bold text-lg">Mongo Mystic</h3>
     <p class="text-sm text-gray-600">Summon schemas & spells</p>
@@ -117,7 +119,7 @@
 </div>
 
 <!-- Mid-Bottom-Right Card -->
-<div class="card mid-card mid-bottom-right transform transition-all duration-700 ease-out absolute bottom-1/4 right-1/4">
+<div class="card mid-card mid-bottom-right transform transition-all duration-700 ease-out absolute bottom-1/4 right-1/4 opacity-0">
   <div class="bg-white rounded-xl shadow-lg p-4 w-64 text-center">
     <h3 class="font-bold text-lg">WebSocket Warrior</h3>
     <p class="text-sm text-gray-600">Real-time, real magic</p>
