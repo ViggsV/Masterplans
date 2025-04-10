@@ -24,7 +24,7 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 
 // zoomed in a tad bit
 viewer.camera.setView({
-  destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 20000000),
+  destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 90000000),
 });
 
 //max zoom distance
@@ -109,60 +109,77 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
   return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
 
-viewer.camera.changed.addEventListener(() => {
-  const height = camera.positionCartographic.height;
-
+// Define card style update function
+function updateCardStyles() {
+  const isMobile = window.innerWidth <= 768;
+  const height = viewer.camera.positionCartographic.height;
   const progress = clamp(mapRange(height, ZOOM_CLOSE, ZOOM_FAR, 0, 1), 0, 1);
   const offsetTwo = 50 * (1 - progress);
-  const offset = 30 * (1 - progress); // move offscreen when zoomed in
-  const scale = mapRange(progress, 0, 1, 0.5, 1); // smaller when zoomed in
+  const offset = 30 * (1 - progress);
+  const scale = mapRange(progress, 0, 1, 0.5, 1);
 
-  cards.forEach(({ el, direction }) => {
-    let transform = `scale(${scale})`;
+  if (isMobile) {
+    // On mobile, remove inline styles to let CSS handle stacking
+    cards.forEach(({ el }) => {
+      el.style.transform = '';
+      el.style.opacity = '';
+    });
+  } else {
+    // On desktop, apply dynamic styles as before
+    cards.forEach(({ el, direction }) => {
+      let transform = `scale(${scale})`;
+      switch (direction) {
+        case "left":
+          transform += ` translateX(-${offset}vw) translateY(-50%)`;
+          break;
+        case "right":
+          transform += ` translateX(${offset}vw) translateY(-50%)`;
+          break;
+        case "bottom":
+          transform += ` translateY(${offset}vh) translateX(-50%)`;
+          break;
+        case "top":
+          transform += ` translateY(-${offset}vh) translateX(-50%)`;
+          break;
+        case "top-left":
+          transform += ` translate(-${offset}vw, -${offset}vh)`;
+          break;
+        case "top-right":
+          transform += ` translate(${offset}vw, -${offset}vh)`;
+          break;
+        case "bottom-left":
+          transform += ` translate(-${offset}vw, ${offset}vh)`;
+          break;
+        case "bottom-right":
+          transform += ` translate(${offset}vw, ${offset}vh)`;
+          break;
+        case "mid-top-left":
+          transform += ` translate(-${offsetTwo * 0.2}vw, -${offset * 0.2}vh)`;
+          break;
+        case "mid-top-right":
+          transform += ` translate(${offsetTwo * 0.2}vw, -${offset * 0.2}vh)`;
+          break;
+        case "mid-bottom-left":
+          transform += ` translate(-${offsetTwo * 0.2}vw, ${offset * 0.2}vh)`;
+          break;
+        case "mid-bottom-right":
+          transform += ` translate(${offsetTwo * 0.2}vw, ${offset * 0.2}vh)`;
+          break;
+      }
+      el.style.transform = transform;
+      el.style.opacity = progress;
+    });
+  }
+}
 
-    switch (direction) {
-      case "left":
-        transform += ` translateX(-${offset}vw) translateY(-50%)`;
-        break;
-      case "right":
-        transform += ` translateX(${offset}vw) translateY(-50%)`;
-        break;
-      case "bottom":
-        transform += ` translateY(${offset}vh) translateX(-50%)`;
-        break;
-      case "top":
-        transform += ` translateY(-${offset}vh) translateX(-50%)`;
-        break;
-      case "top-left":
-        transform += ` translate(-${offset}vw, -${offset}vh)`;
-        break;
-      case "top-right":
-        transform += ` translate(${offset}vw, -${offset}vh)`;
-        break;
-      case "bottom-left":
-        transform += ` translate(-${offset}vw, ${offset}vh)`;
-        break;
-      case "bottom-right":
-        transform += ` translate(${offset}vw, ${offset}vh)`;
-        break;
-      case "mid-top-left":
-        transform += ` translate(-${offsetTwo * 0.2}vw, -${offset * 0.2}vh)`;
-        break;
-      case "mid-top-right":
-        transform += ` translate(${offsetTwo * 0.2}vw, -${offset * 0.2}vh)`;
-        break;
-      case "mid-bottom-left":
-        transform += ` translate(-${offsetTwo * 0.2}vw, ${offset * 0.2}vh)`;
-        break;
-      case "mid-bottom-right":
-        transform += ` translate(${offsetTwo * 0.2}vw, ${offset * 0.2}vh)`;
-        break;
-    }
+// Add event listener for camera changes
+viewer.camera.changed.addEventListener(updateCardStyles);
 
-    el.style.transform = transform;
-    el.style.opacity = progress;
-  });
-});
+// Set initial styles
+updateCardStyles();
+
+// Update styles on window resize (e.g., device rotation)
+window.addEventListener('resize', updateCardStyles);
 
 
 // adding background text
@@ -224,5 +241,7 @@ document.addEventListener('DOMContentLoaded', () => { // Make sure DOM is ready
 
     wallContainer.appendChild(textElement);
   }
+
+  
 
 }); // End DOMContentLoaded
