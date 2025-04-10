@@ -1,0 +1,43 @@
+#buddha {
+    width: 180px;
+    height: auto;
+    z-index: 20;
+}
+/*
+this is equivilant of tailwind hover:scale-105 hover:shadow-xl transition from my landing page 
+*/
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition-property: transform, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .card {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .floating-text {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5rem;
+    /* Starting at full opacity */
+    opacity: 1;
+    /* pointer-events none so they don't interfere with user actions */
+    pointer-events: none;
+    animation: floatUp 30s ease-out forwards;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-110vh);
+      opacity: 0;
+    }
+  }

@@ -1,0 +1,45 @@
+.terminal {
+  display: flex;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  width: 80%;
+  height: 80%;
+}
+
+/* Input container at the bottom */
+.input-container {
+  display: flex;
+  background: #ffffff;
+  border-top: 1px solid #e3e3e3;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.input-container input {
+  flex: 1;
+  background: #ffffff;;
+  color: oklch(27.8% 0.033 256.848)3;
+  border: none;
+  outline: none;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.input-container button {
+  background: #e3e3e3;
+  color: oklch(27.8% 0.033 256.848)
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+/* Styling for each terminal line */
+.line {
+  padding: 0.2rem 0;
+  word-wrap: break-word;
+}
