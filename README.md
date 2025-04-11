@@ -28,9 +28,9 @@ Repository URL
 https://github.com/ViggsV/Masterplans.git
 
 Known bugs:
-- (Codename - Hello World) changing from big screen to small screen some cards stacking action is misbehaving visually (translating from the right)
+- (Codename - Hello World) changing from big screen to small screen some cards stacking action is misbehaving visually (keeping it for visual variety at the moment unless it causes problems)
 - (Resting Place) Minimizing on url and maximizing will spawn lots of floating text on top of each other
-- Submit button stopped working on mouseclick (use enter on your keyboard)
+- ~~Submit button stopped working on mouseclick (use enter on your keyboard)~~ // --- removed DOMContentLoaded wrap on js submit function --- defered script loading --- problem solved
 
 Potential improvements:
 - Improve small screen layout
