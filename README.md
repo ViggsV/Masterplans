@@ -21,7 +21,9 @@ Tech Stack
 HTML, Tailwind CSS, JavaScript, Cesium
 
 How to View
-Visit the GitHub Pages site 
+
+Visit the GitHub Pages
+https://viggsv.github.io/Masterplans/
 
 Repository URL
 https://github.com/ViggsV/Masterplans.git
