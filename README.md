@@ -19,7 +19,7 @@ Features
 Tech Stack
 HTML, Tailwind CSS, JavaScript, Cesium
 
-How to View
+How to View (For a full and better experience use desktop)
 
 Visit the GitHub Pages
 https://viggsv.github.io/Masterplans/
@@ -32,9 +32,10 @@ Known bugs:
 - (Resting Place) Minimizing on url and maximizing will spawn lots of floating text on top of each other
 
 Potential improvements:
+- Improve small screen layout
 - (Codename - Hello World) improve the layout of cards. Maybe create 3D depth to the scene. Add onclick events for cards.
 - (Resting Place) add interactivity. Possibility to select calm sound effects / music. Add subtle glow to the buddha.
 - (Terminal) Create a server to store user inputs.
 
-Development Note
+Developer Note
 I kept a JSON file of my initial terminal log for memorabilia which I left in the repo
