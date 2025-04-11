@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Taking over the world - one div at a time"
+    />
+    <title>Hello world</title>
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles1.css" />
+    <script defer src="script1.js"></script>
+  </head>
+
+  <body
+    class="h-screen flex flex-col justify-between bg-gray-100 text-gray-800"
+  >
+    <div
+      id="background-text-wall"
+      class="fixed z-0 overflow-hidden pointer-events-none inset-0"
+    ></div>
+
+    <div id="main-container" class="relative z-10">
+      <header>
+        <a href="../index.html" class="absolute top-4 left-4 z-1">
+          <svg
+            class="w-6 h-6 text-blue-500 hover:text-black transition"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h3m10-11v11a1 1 0 001 1h3m-10-1h4"
+            />
+          </svg>
+        </a>
+      </header>
+      <main class="min-h-screen flex-grow">
+        <div
+          id="cesiumContainer"
+          class="fullSize"
+          aria-label="Interactive 3D Globe displaying real-time satellite imagery and geographical data. Use your mouse to pan, zoom, and rotate the globe."
+        ></div>
+        <div id="toolbar"></div>
+
+        <div id="cards z-15">
+          <!-- Left Card -->
+          <div class="card left-card">
+            <div>
+              <h3>Birth 7 children</h3>
+              <p>
+                Name them Monday through Sunday. Raise to hack the treasury.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Card -->
+          <div class="card right-card">
+            <div>
+              <h3>Hair-404 bug-fix</h3>
+              <p>
+                Genetic experiments commencing. Google search history is
+                questionable. Googled "CRISPR.js" but got "drink juice" instead.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Center Card -->
+          <div class="card bottom-card">
+            <div>
+              <h3>Learnt GitHub</h3>
+              <p>Push it real good.</p>
+            </div>
+          </div>
+
+          <!-- Top-Left Card -->
+          <div class="card top-left-card">
+            <div>
+              <h3>Centered a div</h3>
+              <p>Cried once. Screamed twice.</p>
+            </div>
+          </div>
+
+          <!-- Top-Right Card -->
+          <div class="card top-right-card">
+            <div>
+              <h3>npm install sanity</h3>
+              <p>Dependancy not found.</p>
+            </div>
+          </div>
+
+          <!-- Bottom-Left Card -->
+          <div class="card bottom-left-card">
+            <div>
+              <h3>Bake Cookies for Morale</h3>
+              <p>
+                Keep the minions happy and productive. Morale is key to ruling
+                the world.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom-Right Card -->
+          <div class="card bottom-right-card">
+            <div>
+              <h3>Intervention</h3>
+              <p>
+                My hoover's gone too far. It's smoking a pack of Marlboro Dust a
+                day.
+              </p>
+            </div>
+          </div>
+
+          <!-- Top-Center Card -->
+          <div class="card top-center-card">
+            <div>
+              <h3>Open Source Enthusiast</h3>
+              <p>All your work are belong to us.</p>
+            </div>
+          </div>
+
+          <!-- Mid-Top-Left Card -->
+          <div class="card mid-top-left">
+            <div>
+              <h3>AI whisperer</h3>
+              <p>Cake was a lie.</p>
+            </div>
+          </div>
+
+          <!-- Mid-Top-Right Card -->
+          <div class="card mid-top-right">
+            <div>
+              <h3>Freeman of Code</h3>
+              <p>Crowbar right in the terminal.</p>
+            </div>
+          </div>
+
+          <!-- Mid-Bottom-Left Card -->
+          <div class="card mid-bottom-left">
+            <div>
+              <h3>Take over the world</h3>
+              <p>Then open source it.</p>
+            </div>
+          </div>
+
+          <!-- Mid-Bottom-Right Card -->
+          <div class="card mid-bottom-right">
+            <div>
+              <h3>I ran out of juice</h3>
+              <p>Juice be with you.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

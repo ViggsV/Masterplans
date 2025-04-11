@@ -1,5 +1,6 @@
 .terminal {
   display: flex;
+  flex-direction: column;
   padding: 1rem;
   background: #ffffff;
   border: 1px solid #e3e3e3;
@@ -16,13 +17,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-
 }
 
 .input-container input {
   flex: 1;
-  background: #ffffff;;
-  color: oklch(27.8% 0.033 256.848)3;
+  background: #ffffff;
+  color: oklch(27.8% 0.033 256.848) 3;
   border: none;
   outline: none;
   font-family: monospace;
@@ -31,15 +31,9 @@
 
 .input-container button {
   background: #e3e3e3;
-  color: oklch(27.8% 0.033 256.848)
+  color: oklch(27.8% 0.033 256.848);
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   margin-left: 0.5rem;
-}
-
-/* Styling for each terminal line */
-.line {
-  padding: 0.2rem 0;
-  word-wrap: break-word;
 }

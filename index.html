@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Plan A – Take over the world. One div at a time." />
-  <title>Masterplan</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Landing page with three cards leading to different projects"
+    />
+    <title>Masterplan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
 
-<body class="h-screen flex flex-col justify-between bg-gray-100 text-gray-800 ">
-  <main class="flex flex-col min-h-screen">
-  <header>
-    <a href="index.html" class="absolute top-4 left-4">
-      <svg class="w-6 h-6 text-gray-600 hover:text-black transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h3m10-11v11a1 1 0 001 1h3m-10-1h4" />
-      </svg>
-    </a>
-  </header>
- 
+  <body
+    class="h-screen flex flex-col justify-between bg-gray-100 text-gray-800"
+  >
+    <main class="flex flex-col min-h-screen">
+      <header>
+        <a href="index.html" class="absolute top-4 left-4">
+          <svg
+            class="w-6 h-6 text-gray-600 hover:text-black transition"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h3m10-11v11a1 1 0 001 1h3m-10-1h4"
+            />
+          </svg>
+        </a>
+      </header>
 
-  
-    <section>
-      <h1 class="text-4xl font-bold text-center p-3">Welcome to Masterplan</h1>
-      <p class="text-center mt-1 max-w-xl mx-auto text-gray-600">
-      Choose your destiny.
-      </p>
-    </section>
-    <div class="flex flex-col flex-1 md:flex-row justify-center gap-6 mt-3 p-9">
-      <!-- PLAN A -->
-      <a href="plan a\plan a.html" class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition">
-        <h2 class="text-xl font-bold">Plan A - Take Over The World</h2>
-        <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
-          <li >World domination.</li> 
-          <li >Cure baldness.</li> 
-          <li >Train rats to code.</li> 
-          <li>Bake cookies for morale.</li>
-          <li>Buy an extinguisher for Alfie (that dude is on fire!!!)</li>
-          <li>Launch satellite network for 24/7 lo-fi world surveillance.</li>
+      <section>
+        <h1 class="text-4xl font-bold text-center p-3">
+          Welcome to Masterplan
+        </h1>
+        <p class="text-center mt-1 max-w-xl mx-auto text-gray-600">
+          Choose a card.
+        </p>
+      </section>
+      <div
+        class="flex flex-col flex-1 md:flex-row justify-center gap-6 mt-3 p-9"
+      >
+        <!-- CARD 1 -->
+        <a
+          href="card 1/hello world.html"
+          class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition"
+        >
+          <h2 class="text-xl font-bold">Codename 'Hello World'</h2>
+          <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
+            <li>Hello World.</li>
+            <li>Expect a globe.</li>
+            <li>I shared some thoughts.</li>
+            <li>Random background text - try refreshing the page.</li>
+            <li>Zoom in.</li>
+            <li>Debugging took all of my time.</li>
+            <li>To-do: Launch satellite network for 24/7 lo-fi world surveillance.</li>
+          </ul>
+        </a>
 
-           
+        <!-- CARD 2 -->
+        <a
+          href="card 2/resting place.html"
+          class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition"
+        >
+          <h2 class="text-xl font-bold text-center">
+            Resting place
+          </h2>
+          <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
+            <li>I needed a break after the first card.</li>
+            <li>Re-invented the random background text.</li>
+            <li>Abandoned ego.</li>
+            <li>Embraced baldness.</li>
+            <li>Achieved peace.</li>
+            <li>Possibly floated.</li>
+          </ul>
+        </a>
 
-        </ul>
-        <p class="text-gray-500"></p>
-      </a>
-    
-      <!-- PLAN B -->
-      <a href="plan b\plan b.html" class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition">
-        <h2 class="text-xl font-bold text-center ">Plan B - The Enlightened Buddha</h2>
-        <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
-          <li>Abandon ego.</li> 
-          <li>Embrace baldness.</li>
-          <li>Achieve peace.</li> 
-          <li>Possibly float.</li> 
-          <li>Become a healer</li>
-
-           
-
-        </ul>
-      </a>
-    
-      <!-- PLAN C -->
-      <a href="plan c\plan c.html" class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition">
-        <h2 class="text-xl font-bold">Plan C - Slayer</h2>
-        <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
-          <li>Slay. Not sure how. But slay.</li> 
-        </ul>
-      </a>
-    </div>
-    <footer >
-      <p class="flex justify-center">&copy; 2025 World Domination Inc. All rights seized.</p>
-    </footer>
-  </main>
-
-
-
-</body>
+        <!-- PLAN C -->
+        <a
+          href="card 3/terminal.html"
+          class="group bg-white shadow-lg rounded-2xl p-6 w-full text-center hover:scale-105 hover:shadow-xl transition"
+        >
+          <h2 class="text-xl font-bold">Terminal</h2>
+          <ul class="text-gray-500 flex flex-col items-center gap-1 mt-4">
+            <li>User-input-happy.</li>
+            <li>Kept my terminal JSON as a memorabelia.</li>
+          </ul>
+        </a>
+      </div>
+      <footer>
+        <p class="flex justify-center">
+          &copy; 2025 World Domination Inc. All rights seized.
+        </p>
+      </footer>
+    </main>
+  </body>
 </html>
