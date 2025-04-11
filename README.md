@@ -27,3 +27,5 @@ https://viggsv.github.io/Masterplans/
 
 Repository URL
 https://github.com/ViggsV/Masterplans.git
+
+P.S I kept a JSON of my initial terminal log for memorabilia
