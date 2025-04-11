@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
   // Key for localStorage
   const STORAGE_KEY = "terminalCommands";
 
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         submitCommand();
       }
     });
-});
+
 
 function launchConfetti() {
   const count = 200;
