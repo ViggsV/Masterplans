@@ -38,5 +38,4 @@ Potential improvements:
 - (Resting Place) add interactivity. Possibility to select calm sound effects / music. Add subtle glow to the buddha.
 - (Terminal) Create a server to store user inputs.
 
-Developer Note
-I kept a JSON file of my initial terminal log for memorabilia which I left in the repo
+
